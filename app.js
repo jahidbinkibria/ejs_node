@@ -1,11 +1,9 @@
-//normal function statement
-function sayHi(){
-    console.log('hi');
+function callFunction(fun){
+    fun();
 }
-sayHi();
 //function expression //annonymas function
 var sayBye = function(){
     console.log('bye');
 };
-sayBye();
+callFunction(sayBye);
 
