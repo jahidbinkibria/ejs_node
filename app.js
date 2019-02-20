@@ -1,9 +1,2 @@
-function callFunction(fun){
-    fun();
-}
-//function expression //annonymas function
-var sayBye = function(){
-    console.log('bye');
-};
-callFunction(sayBye);
-
+const counter = require('./count');
+console.log(counter(['Shaun', 'crystal', 'ryu']))
