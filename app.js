@@ -1,14 +1,9 @@
-var fs = require('fs');
+const http = require('http');
 
-//create directory
-   //fs.mkdirSync('stuff');
-
-//remove directory
-    //fs.rmdirSync('stuff');
-
-//asyn
-fs.mkdirSync('stuffs',() => {
-    fs.readFile('readme.txt', 'utf-8', (err, data) => {
-        fs.writeFile('./stuffs/write.txt', data);
-    });
+const server = http.createServer( (req, res) => {
+    console.log("Request was made. " + req.url);
+    res.writeHead(200, {'Content-Type': 'text/plain'});
+    res.end('Hey ninjas');
 });
+server.listen(3000, '127.0.0.1');
+console.log("yo dawgs, now listining to port 3000");
