@@ -1,13 +1,14 @@
-const fs = require('fs');
+var fs = require('fs');
 
-//read a file
-const readme = fs.readFileSync('./readme.txt', 'utf-8');
+//create directory
+   //fs.mkdirSync('stuff');
 
-//write to a file
-fs.writeFileSync('writeme.txt', readme);
+//remove directory
+    //fs.rmdirSync('stuff');
 
-//async
-fs.readFile('./readme.txt', 'utf-8' , (e, data) => {
-    console.log(data);
+//asyn
+fs.mkdirSync('stuffs',() => {
+    fs.readFile('readme.txt', 'utf-8', (err, data) => {
+        fs.writeFile('./stuffs/write.txt', data);
+    });
 });
-fs.writeFileSync('writemte.txt', readme);
