@@ -1,22 +1,13 @@
-const events = require('events');
+const fs = require('fs');
 
-const util = require('util');
-const Person = function(name){
-    this.name = name;
-};
+//read a file
+const readme = fs.readFileSync('./readme.txt', 'utf-8');
 
-util.inherits(Person, events.EventEmitter);
+//write to a file
+fs.writeFileSync('writeme.txt', readme);
 
-let james = new Person('james');
-let mary = new Person('mary');
-let ryu = new Person('ruy');
-const people = [james, mary, ryu];
- 
-people.forEach(person => {
-    person.on('speak', mssg => {
-        console.log(person.name + ' said: ' + mssg);
-    })
+//async
+fs.readFile('./readme.txt', 'utf-8' , (e, data) => {
+    console.log(data);
 });
-
-james.emit('speak', 'hey dude');
-ryu.emit('speak', 'i want curry');
+fs.writeFileSync('writemte.txt', readme);
