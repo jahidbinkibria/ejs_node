@@ -19,31 +19,15 @@
             letter-spacing: 2px;
             text-align: center;
         }
-        h2{
-            font-size: 38px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            text-align: center;
-        }
-        p,li{
+        p{
             font-size: 16px;
             text-align: center;
-            list-style: none;
         }
     </style>
 </head>
 <body>
-
     <% include partials/nav.ejs %>
-
-    <h1>Welcome to the profile of <%= person %></h1>
-    <p><strong>Age: </strong> <%= data.age %> </p> 
-    <p><strong>Job: </strong> <%= data.job %> </p> 
-    <h2>Hobbies</h2>
-    <ul>
-        <% data.hobbies.forEach( hobbie => { %>
-            <li><%= hobbie %></li>
-       <% }); %>
-    </ul>
+    <h1>Welcome to the web</h1>
+    <p>Website</p> 
 </body>
 </html>
