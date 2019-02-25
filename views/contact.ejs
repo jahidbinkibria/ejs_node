@@ -5,29 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="/assets/styles.css" type="text/css"/>
 
-    <style>
-        body{
-            background: skyblue;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-            color: #ffffff;
-            padding: 30px;
-        }
-        h1{
-            font-size: 45px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            text-align: center;
-        }
-        p{
-            font-size: 16px;
-            text-align: center;
-        }
-    </style>
 </head>
 <body>
     <% include partials/nav.ejs %>
     <h1>Welcome to the web contact</h1>
     <p>contact</p>
+    <p><%= qs.name %></p>
+    <p><%= qs.dept %></p>
+
+    <form id="contact-form">
+        <label for="who">who do you want to contact</label>
+        <input type="text" name="who" value="<%= qs.name %>"/>
+        <label for="department">Which department</label>
+        <input type="text" name="department" value="<%= qs.dept %>"/>
+        <label for="email">Your email</label>
+        <input type="email" name="email"/>
+        <input type="submit" value="submit"/>
+    </form>
 </body>
 </html>
