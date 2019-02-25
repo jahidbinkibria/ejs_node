@@ -11,7 +11,7 @@ app.get('/contact' , (req,res) => {
     res.sendFile(`${__dirname}/contact.html`);
 });
 
-const data = {age:38, job: 'ninja'};
+const data = {age:38, job: 'ninja', hobbies: ['eating', 'fighting', 'fishing']};
 
 app.get('/profile/:name', (req, res) =>{
     res.render('profile', {person: req.params.name, data: data});
