@@ -15,7 +15,7 @@
     <p><%= qs.name %></p>
     <p><%= qs.dept %></p>
 
-    <form id="contact-form">
+    <form id="contact-form" method="POST" action="/contact">
         <label for="who">who do you want to contact</label>
         <input type="text" name="who" value="<%= qs.name %>"/>
         <label for="department">Which department</label>
